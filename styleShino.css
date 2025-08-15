@@ -1,0 +1,146 @@
+/* Custom CSS for a modern, Japanese-inspired design */
+
+/* Color Palette based on Japanese tradition */
+:root {
+    --indigo-blue: #1A237E;
+    --vermilion: #E53935;
+    --off-white: #F5F5F5;
+    --sumi-black: #212121;
+    --bamboo-green: #66BB6A;
+    --khaki: #033b03; /* Deep green */
+}
+
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--off-white);
+    color: var(--sumi-black);
+    scroll-behavior: smooth;
+}
+
+/* Typography for Headings */
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Navigation Link Hover Effect */
+.nav-link {
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+    color: var(--vermilion);
+}
+
+/* Animation for elements appearing on scroll */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    will-change: opacity, transform;
+}
+
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Slideshow specific styles */
+.slideshow-container {
+    position: relative;
+}
+
+.mySlides {
+    display: none;
+    height: 100%;
+}
+
+.mySlides img {
+    height: 100%;
+    width: 100%;
+}
+
+.slide-text {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+}
+
+/* Dots navigation */
+.dots-container {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #042359;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+/* Khaki background for footer contact section */
+.khaki-bg {
+    background-color: var(--khaki);
+}
+
+
+
+
+
+
+
+/* Ensure the body is not scrollable when modal is open */
+body.modal-open {
+    overflow: hidden;
+}
+
+
+
+
+/* 桜の花びらの基本スタイル */
+.cherry-blossom {
+    position: fixed;          /* 画面に固定してスクロールしても落ちる */
+    top: -255px;               /* 画面の上からスタート */
+    animation: fall 8s linear infinite;  /* 8秒で落下、無限ループ */
+    opacity: 0.7;             /* 少し透ける */
+    pointer-events: none;     /* ユーザー操作を無視 */
+    z-index: 1;               /* 他の要素より前に表示 */
+}
+
+/* 落下アニメーション */
+@keyframes fall {
+    0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.7;
+    }
+    90% {
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
