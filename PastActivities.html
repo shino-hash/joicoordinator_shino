@@ -11,7 +11,54 @@
     <!-- Poppins for body text (sans-serif) and Playfair Display for headings (serif) -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
     <!-- Separate CSS file for custom styles -->
-    <link rel="stylesheet" href="styleShino.css">
+<style>
+    /* Custom CSS for a modern, Japanese-inspired design */
+    /* Color Palette based on Japanese tradition */
+    :root {
+        --indigo-blue: #1A237E;
+        --vermilion: #E53935;
+        --off-white: #F5F5F5;
+        --sumi-black: #212121;
+        --bamboo-green: #66BB6A;
+        --dark-khaki: #9A8A59;
+        --calm-orange: #FFD4A2;
+    }
+
+    /* Global Styles */
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: var(--off-white);
+        color: var(--sumi-black);
+        scroll-behavior: smooth;
+    }
+
+    /* Typography for Headings */
+    h1, h2, h3 {
+        font-family: 'Playfair Display', serif;
+    }
+
+    /* Navigation Link Hover Effect */
+    .nav-link {
+        transition: color 0.3s ease-in-out;
+    }
+
+    .nav-link:hover {
+        color: var(--vermilion);
+    }
+
+    /* Animation for elements appearing on scroll */
+    .fade-in-section {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        will-change: opacity, transform;
+    }
+
+    .fade-in-section.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+</style>
 </head>
 <body class="antialiased">
 
