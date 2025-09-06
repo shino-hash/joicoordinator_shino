@@ -11,67 +11,19 @@
     <!-- Poppins for body text (sans-serif) and Playfair Display for headings (serif) -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
     <!-- Separate CSS file for custom styles -->
-<style>
-    /* Custom CSS for a modern, Japanese-inspired design */
-    /* Color Palette based on Japanese tradition */
-    :root {
-        --indigo-blue: #1A237E;
-        --vermilion: #E53935;
-        --off-white: #F5F5F5;
-        --sumi-black: #212121;
-        --bamboo-green: #66BB6A;
-        --dark-khaki: #9A8A59;
-        --calm-orange: #FFD4A2;
-    }
-
-    /* Global Styles */
-    body {
-        font-family: 'Poppins', sans-serif;
-        background-color: var(--off-white);
-        color: var(--sumi-black);
-        scroll-behavior: smooth;
-    }
-
-    /* Typography for Headings */
-    h1, h2, h3 {
-        font-family: 'Playfair Display', serif;
-    }
-
-    /* Navigation Link Hover Effect */
-    .nav-link {
-        transition: color 0.3s ease-in-out;
-    }
-
-    .nav-link:hover {
-        color: var(--vermilion);
-    }
-
-    /* Animation for elements appearing on scroll */
-    .fade-in-section {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        will-change: opacity, transform;
-    }
-
-    .fade-in-section.is-visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-</style>
-
+    <link rel="stylesheet" href="styleShino.css">
 </head>
 <body class="antialiased">
 
     <!-- Header and Navigation (re-using the same header) -->
     <header class="bg-white sticky top-0 z-50 shadow-md">
         <nav class="container mx-auto p-4 flex justify-between items-center max-w-7xl">
-            <a href="index.html" class="text-xl font-bold text-gray-900 nav-link">Japan with Shino</a>
-            <div class="hidden md:flex space-x-6">
+            <a href="index.html" class="text-xl font-bold text-gray-900 nav-link">Japan Outreach Initiative Program Coordinator</a>
+            <div class="hidden md:flex space-x-6 text-black">
                 <a href="index.html#about" class="text-gray-600 nav-link">About Me</a>
                 <a href="index.html#programs" class="text-gray-600 nav-link">Program Offerings</a>
                 <a href="index.html#past-activities" class="text-gray-600 nav-link">Past Activities</a>
-                <a href="index.html#news-events" class="text-gray-600 nav-link">Upcoming Events</a>
+                <a href="index.html#news-events" class="text-gray-600 nav-link">News & Events</a>
                 <a href="index.html#contact" class="text-gray-600 nav-link">Contact</a>
             </div>
             <div class="md:hidden">
