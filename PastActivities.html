@@ -3,94 +3,204 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Past Activities - JOI Coordinator</title>
-    <!-- Tailwind CSS CDN for modern, responsive styling -->
+    <title>Past Activities Archive - JOI Coordinator</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Poppins for body text (sans-serif) and Playfair Display for headings (serif) -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
-    <!-- Separate CSS file for custom styles -->
-    <link rel="stylesheet" href="styleShino.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <style>
+        :root {
+            --indigo-blue: #1A237E;
+            --vermilion: #E53935;
+            --off-white: #F9F7F2; /* 落ち着いた和風の白 */
+            --sumi-black: #212121; /* 墨色 */
+            --dark-khaki: #9A8A59;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--off-white);
+            color: var(--sumi-black);
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .nav-link:hover {
+            color: var(--vermilion);
+            transition: color 0.3s ease;
+        }
+
+        /* モーダル（拡大表示）のスタイル */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        #lightbox img {
+            max-width: 90%;
+            max-height: 80%;
+            border: 4px solid white;
+            border-radius: 8px;
+        }
+
+        .newsletter-card img {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .newsletter-card img:hover {
+            transform: scale(1.02);
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
 </head>
 <body class="antialiased">
 
-    <!-- Header and Navigation (re-using the same header) -->
+    <!-- Header (index.htmlと共通) -->
     <header class="bg-white sticky top-0 z-50 shadow-md">
         <nav class="container mx-auto p-4 flex justify-between items-center max-w-7xl">
-            <a href="index.html" class="text-xl font-bold text-gray-900 nav-link">Japan Outreach Initiative Program Coordinator</a>
-            <div class="hidden md:flex space-x-6 text-black">
+            <a href="index.html" class="text-xl font-bold text-gray-900 nav-link">JOI Coordinator</a>
+            <div class="hidden md:flex space-x-6">
                 <a href="index.html#about" class="text-gray-600 nav-link">About Me</a>
                 <a href="index.html#programs" class="text-gray-600 nav-link">Program Offerings</a>
                 <a href="index.html#past-activities" class="text-gray-600 nav-link">Past Activities</a>
                 <a href="index.html#news-events" class="text-gray-600 nav-link">News & Events</a>
                 <a href="index.html#contact" class="text-gray-600 nav-link">Contact</a>
             </div>
-            <div class="md:hidden">
-                <button class="text-gray-600 focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-                </button>
-            </div>
         </nav>
     </header>
 
-    <main class="container mx-auto p-8 my-16 max-w-7xl">
-        <h1 class="text-5xl font-bold text-center mb-16 text-indigo-blue">Past Activities</h1>
+    <main class="container mx-auto p-8 my-12 max-w-7xl">
+        <h1 class="text-5xl font-bold text-center mb-4 text-indigo-blue">Newsletter Archive</h1>
+        <p class="text-center text-gray-600 mb-16">Click on any image to enlarge and read the full newsletter.</p>
 
-        <!-- Activity List Section -->
-        <section class="space-y-12">
-            <!-- Activity Item 1 -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 bg-white p-6 rounded-xl shadow-lg fade-in-section">
-                <div class="md:col-span-1">
-                    <img src="https://placehold.co/600x400/D4D4D4/212121?text=Past+Activity+1" alt="Japanese Calligraphy Workshop" class="w-full h-auto rounded-xl">
+        <!-- グリッドコンテナ: PCで3列、スマホで1列 -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            
+            <!-- 月別カード 1 (最新月) -->
+            <div class="newsletter-card fade-in">
+                <div class="bg-white p-3 rounded-xl shadow-lg mb-4">
+                    <img src="https://placehold.co/600x800/D4D4D4/212121?text=December+Newsletter" 
+                         alt="December 2024" 
+                         onclick="openLightbox(this.src)"
+                         class="w-full h-auto rounded-lg shadow-sm">
                 </div>
-                <div class="md:col-span-2 space-y-2">
-                    <h2 class="text-2xl font-bold text-vermilion">Introduction to Japanese Calligraphy</h2>
-                    <p class="text-gray-500"><i class="fas fa-calendar-alt mr-2"></i>October 26, 2024</p>
-                    <p class="text-gray-500"><i class="fas fa-map-marker-alt mr-2"></i>Logan High School</p>
-                    <p class="text-lg text-gray-700 leading-relaxed">
-                        Students learned the basics of Japanese calligraphy, focusing on brush techniques, proper posture, and the cultural significance of the art form. The workshop provided a hands-on opportunity to practice writing simple characters like "心" (kokoro - heart) and "夢" (yume - dream).
-                    </p>
-                </div>
+                <h3 class="text-2xl font-bold text-center text-indigo-blue">December 2024</h3>
             </div>
 
-            <!-- Activity Item 2 -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 bg-white p-6 rounded-xl shadow-lg fade-in-section">
-                <div class="md:col-span-1">
-                    <img src="https://placehold.co/600x400/D4D4D4/212121?text=Past+Activity+2" alt="Origami Workshop" class="w-full h-auto rounded-xl">
+            <!-- 月別カード 2 -->
+            <div class="newsletter-card fade-in" style="animation-delay: 0.1s;">
+                <div class="bg-white p-3 rounded-xl shadow-lg mb-4">
+                    <img src="https://placehold.co/600x800/D4D4D4/212121?text=November+Newsletter" 
+                         alt="November 2024" 
+                         onclick="openLightbox(this.src)"
+                         class="w-full h-auto rounded-lg shadow-sm">
                 </div>
-                <div class="md:col-span-2 space-y-2">
-                    <h2 class="text-2xl font-bold text-vermilion">Origami Workshop</h2>
-                    <p class="text-gray-500"><i class="fas fa-calendar-alt mr-2"></i>November 15, 2024</p>
-                    <p class="text-gray-500"><i class="fas fa-map-marker-alt mr-2"></i>Utah State University</p>
-                    <p class="text-lg text-gray-700 leading-relaxed">
-                        An engaging workshop where participants created various origami figures, including the classic crane and a samurai helmet. The session also covered the history of origami and its role in Japanese culture and festivals.
-                    </p>
-                </div>
+                <h3 class="text-2xl font-bold text-center text-indigo-blue">November 2024</h3>
             </div>
 
-            <!-- Activity Item 3 -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 bg-white p-6 rounded-xl shadow-lg fade-in-section">
-                <div class="md:col-span-1">
-                    <img src="https://placehold.co/600x400/D4D4D4/212121?text=Past+Activity+3" alt="Japanese School Life Presentation" class="w-full h-auto rounded-xl">
+            <!-- 月別カード 3 -->
+            <div class="newsletter-card fade-in" style="animation-delay: 0.2s;">
+                <div class="bg-white p-3 rounded-xl shadow-lg mb-4">
+                    <img src="https://placehold.co/600x800/D4D4D4/212121?text=October+Newsletter" 
+                         alt="October 2024" 
+                         onclick="openLightbox(this.src)"
+                         class="w-full h-auto rounded-lg shadow-sm">
                 </div>
-                <div class="md:col-span-2 space-y-2">
-                    <h2 class="text-2xl font-bold text-vermilion">Japanese School Life Presentation</h2>
-                    <p class="text-gray-500"><i class="fas fa-calendar-alt mr-2"></i>December 5, 2024</p>
-                    <p class="text-gray-500"><i class="fas fa-map-marker-alt mr-2"></i>Logan Elementary School</p>
-                    <p class="text-lg text-gray-700 leading-relaxed">
-                        A lively presentation for elementary students, giving them a glimpse into the daily life of a student in Japan, from school lunches to classroom activities and annual events.
-                    </p>
-                </div>
+                <h3 class="text-2xl font-bold text-center text-indigo-blue">October 2024</h3>
             </div>
-        </section>
+
+            <!-- 月別カード 4 -->
+            <div class="newsletter-card fade-in" style="animation-delay: 0.3s;">
+                <div class="bg-white p-3 rounded-xl shadow-lg mb-4">
+                    <img src="https://placehold.co/600x800/D4D4D4/212121?text=September+Newsletter" 
+                         alt="September 2024" 
+                         onclick="openLightbox(this.src)"
+                         class="w-full h-auto rounded-lg shadow-sm">
+                </div>
+                <h3 class="text-2xl font-bold text-center text-indigo-blue">September 2024</h3>
+            </div>
+
+            <!-- 月別カード 5 -->
+            <div class="newsletter-card fade-in" style="animation-delay: 0.4s;">
+                <div class="bg-white p-3 rounded-xl shadow-lg mb-4">
+                    <img src="https://placehold.co/600x800/D4D4D4/212121?text=August+Newsletter" 
+                         alt="August 2024" 
+                         onclick="openLightbox(this.src)"
+                         class="w-full h-auto rounded-lg shadow-sm">
+                </div>
+                <h3 class="text-2xl font-bold text-center text-indigo-blue">August 2024</h3>
+            </div>
+
+            <!-- 月別カード 6 -->
+            <div class="newsletter-card fade-in" style="animation-delay: 0.5s;">
+                <div class="bg-white p-3 rounded-xl shadow-lg mb-4">
+                    <img src="https://placehold.co/600x800/D4D4D4/212121?text=July+Newsletter" 
+                         alt="July 2024" 
+                         onclick="openLightbox(this.src)"
+                         class="w-full h-auto rounded-lg shadow-sm">
+                </div>
+                <h3 class="text-2xl font-bold text-center text-indigo-blue">July 2024</h3>
+            </div>
+
+        </div>
     </main>
 
-    <!-- Footer Section (re-using the same footer) -->
-    <footer class="khaki-bg text-white text-center p-8 mt-16 fade-in-section">
+    <!-- Lightbox Modal -->
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Enlarged Newsletter">
+    </div>
+
+    <!-- Footer (共通) -->
+    <footer class="bg-[#9A8A59] text-white text-center p-8 mt-16">
         <div class="container mx-auto">
-            <p>&copy; 2024 Your Name. All Rights Reserved. | Japan Outreach Initiative Coordinator</p>
+            <p>&copy; 2024 Shino Manabe. All Rights Reserved. | Japan Outreach Initiative</p>
+            <a href="index.html" class="inline-block mt-4 border border-white px-6 py-2 rounded-full hover:bg-white hover:text-[#9A8A59] transition">Back to Home</a>
         </div>
     </footer>
+
+    <script>
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        function openLightbox(src) {
+            lightboxImg.src = src;
+            lightbox.style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // 背景スクロール禁止
+        }
+
+        function closeLightbox() {
+            lightbox.style.display = 'none';
+            document.body.style.overflow = 'auto'; // スクロール再開
+        }
+
+        // Escキーでも閉じられるように設定
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
 </body>
 </html>
