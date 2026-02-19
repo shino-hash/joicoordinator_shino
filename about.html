@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Shino Manabe</title>
+    <!-- Tailwind CSS & Fonts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styleShino.css" />
+    <style>
+      /* Custom styles for this page */
+      .text-shadow-custom {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+      .fade-in {
+        animation: fadeIn 1.5s ease-in-out;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-off-white">
+    <!-- Header -->
+    <header class="bg-white sticky top-0 z-50 shadow-md">
+      <nav
+        class="container mx-auto p-4 flex justify-between items-center max-w-7xl"
+      >
+        <a href="index.html" class="text-xl font-bold text-gray-900 nav-link"
+          >Japan with Shino</a
+        >
+        <div class="hidden md:flex space-x-6">
+          <a href="index.html#about" class="text-gray-600 nav-link">About Me</a>
+          <a href="index.html#programs" class="text-gray-600 nav-link"
+            >Program Offerings</a
+          >
+          <a href="index.html#past-activities" class="text-gray-600 nav-link"
+            >Past Activities</a
+          >
+          <a href="index.html#news-events" class="text-gray-600 nav-link"
+            >Weekly Events at USU</a
+          >
+          <a href="index.html#contact" class="text-gray-600 nav-link"
+            >Contact</a
+          >
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="fade-in">
+      <!-- Hero Section -->
+      <section
+        class="relative h-96 bg-cover bg-center"
+        style="
+          background-image: url(&quot;images/about/hirodai sakura.jpg&quot;);
+        "
+      >
+        <div
+          class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center"
+        >
+          <h1
+            class="text-5xl font-playfair-display text-white text-shadow-custom"
+          >
+            About Me
+          </h1>
+        </div>
+      </section>
+
+      <!-- Introduction -->
+      <section class="container mx-auto max-w-4xl p-8 my-16 text-center">
+        <h2 class="text-3xl font-playfair-display text-indigo-blue mb-6">
+          Shino Manabe
+        </h2>
+        <p class="text-lg text-gray-700 leading-relaxed">
+          Hello! I'm the Japan Outreach Initiative (JOI) Program Coordinator at
+          Utah State University. My mission is to share the rich and diverse
+          culture of Japan with the community in Logan, Utah. Through engaging
+          workshops, presentations, and cultural events, I hope to foster a
+          deeper understanding and appreciation for Japan.
+        </p>
+      </section>
+
+      <!-- My Journey -->
+      <section class="bg-white py-16">
+        <div
+          class="container mx-auto max-w-6xl grid md:grid-cols-2 gap-12 items-center"
+        >
+          <div class="px-8">
+            <h3 class="text-2xl font-playfair-display text-vermilion mb-4">
+              My Journey
+            </h3>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              My passion for cultural exchange began with my grandmother, who
+              was a master of calligraphy and flower arranging. Growing up, I
+              was immersed in the traditions that celebrate the beauty of each
+              season. This upbringing instilled in me a deep love for my culture
+              and a desire to share it with others.
+            </p>
+            <p class="text-gray-700 leading-relaxed">
+              A transformative experience in Indonesia, where I had the
+              opportunity to introduce Japanese culture to a new audience,
+              solidified my path. It was there I realized the power of cultural
+              exchange to connect people and build bridges of understanding.
+            </p>
+          </div>
+          <div>
+            <img
+              src="images/about/cooking shino kimono.jpg"
+              alt="Shino in a traditional kimono"
+              class="rounded-lg shadow-xl w-full"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Photo Gallery -->
+      <section class="container mx-auto max-w-6xl p-8 my-16">
+        <h3
+          class="text-3xl font-playfair-display text-center text-indigo-blue mb-10"
+        >
+          A Glimpse Into My Life
+        </h3>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="grid gap-4">
+            <div>
+              <img
+                class="h-auto max-w-full rounded-lg"
+                src="images/common/ShinoKimonoRed1.jpg"
+                alt=""
+              />
+            </div>
+            <div>
+              <img
+                class="h-auto max-w-full rounded-lg"
+                src="images/about/shino hocky.jpg"
+                alt=""
+              />
+            </div>
+            <div>
+              <img
+                class="h-auto max-w-full rounded-lg"
+                src="images/about/shino bearlake.jpg"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="grid gap-4">
+            <div>
+              <img
+                class="h-auto max-w-full rounded-lg"
+                src="images/about/ShinoYukata1.jpg"
+                alt=""
+              />
+            </div>
+            <div>
+              <img
+                class="h-auto max-w-full rounded-lg"
+                src="images/about/ShinoNewYearPresentation.jpg"
+                alt=""
+              />
+            </div>
+            <div>
+              <img
+                class="h-auto max-w-full rounded-lg"
+                src="images/common/ShinoSummer.jpg"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="grid gap-4">
+            <div>
+              <img
+                class="h-auto max-w-full rounded-lg"
+                src="images/about/Hina1.jpg"
+                alt=""
+              />
+            </div>
+            <div>
+              <img
+                class="h-auto max-w-full rounded-lg"
+                src="images/about/onigiri1.jpg"
+                alt=""
+              />
+            </div>
+            <div>
+              <img
+                class="h-auto max-w-full rounded-lg"
+                src="images/about/onigiri2.jpg"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="grid gap-4">
+            <div>
+              <img
+                class="h-auto max-w-full rounded-lg"
+                src="images/about/RwandaInClass.JPEG"
+                alt=""
+              />
+            </div>
+            <div>
+              <img
+                class="h-auto max-w-full rounded-lg"
+                src="images/about/BasketballClub4people.JPG"
+                alt=""
+              />
+            </div>
+            <div>
+              <img
+                class="h-auto max-w-full rounded-lg"
+                src="images/about/hiking.jpg"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#9A8A59] text-white text-center p-8 mt-16">
+      <div class="container mx-auto">
+        <p>
+          &copy; 2024 Shino Manabe. All Rights Reserved. | Japan Outreach
+          Initiative
+        </p>
+        <a
+          href="index.html"
+          class="inline-block mt-4 border border-white px-6 py-2 rounded-full hover:bg-white hover:text-[#9A8A59] transition"
+          >Back to Home</a
+        >
+      </div>
+    </footer>
+  </body>
+</html>
